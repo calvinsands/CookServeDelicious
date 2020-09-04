@@ -9,20 +9,18 @@ from constants import clock
 from constants import food
 from constants import foodOrder
 
-pyautogui.PAUSE = 0.09
+pyautogui.PAUSE = 0.075
 pyautogui.FAILSAFE = True
 
 def soda(num):
 	sodaimg = None
 	while True:
-		for sodaType in range(42):
-			#print(sodaType)
+		for sodaType in range(43):
+			if sodaType == 42:
+				break
 			sodaimg = pyautogui.locateOnScreen('sodaimg' + str(sodaType) + '.png', region=recipe_region, grayscale=True)
 			if sodaimg:
 				break
-			if sodaType == 41:
-				print('No soda type found')
-				return
 		
 		if sodaType == 0:
 			print('Small Cola')

@@ -9,22 +9,21 @@ from constants import clock
 from constants import food
 from constants import foodOrder
 
-pyautogui.PAUSE = 0.09
+pyautogui.PAUSE = 0.075
 pyautogui.FAILSAFE = True
 
 
 def fries(num):
 
 	friesimg = None
-	for friesType in range(1):
-		#print(friesType)
-		if friesType == 0:
+	for friesType in range(10):
+		if friesType == 9:
 			print('No fries type found.')
 			pyautogui.screenshot('friesimg'+str(friesType)+'.png', region=recipe_region)
 			print('New fries saved as friesimg'+str(friesType)+'.png')
 			print('Exiting.')
 			sys.exit()
-		friesimg = pyautogui.locateCenterOnScreen('friesimg' + str(friesType) + '.png', region=recipe_region, grayscale=True)
+		friesimg = pyautogui.locateOnScreen('friesimg' + str(friesType) + '.png', region=recipe_region, grayscale=True)
 		if friesimg:
 			break
 
@@ -35,25 +34,51 @@ def fries(num):
 	
 	while True:
 		
-		if friesType == -9:
+		if friesType == 0:
 			print('SALT THOSE FRIES BRUH')
 			pyautogui.press('a')
 			break
 
-		elif friesType == -9:
+		elif friesType == 1:
 			print('MY LOVE IS THE SEA')
 			pyautogui.press('e')
 			break
 
-		elif friesType == -9:
+		elif friesType == 2:
 			print('SWEETNSALTY')
 			pyautogui.press('a')
 			pyautogui.press('s')
 			break
 
-		elif friesType == -9:
+		elif friesType == 3:
 			print('SUGAR. IN. WATER')
 			pyautogui.press('s')
+			break
+		
+		# event salt fries
+		elif friesType == 4:
+			print('salted')
+			pyautogui.press('a')
+			break
+		
+		# event no salt fries
+		elif friesType == 5:
+			break
+		
+		# thick event no salt fries
+		elif friesType == 6:
+			break
+			
+		# thick event salt fries
+		elif friesType == 7:
+			print('salted')
+			pyautogui.press('a')
+			break
+			
+		# thick event sea salt fries
+		elif friesType == 8:
+			print('salted')
+			pyautogui.press('e')
 			break
 
 		else:

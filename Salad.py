@@ -3,27 +3,20 @@ import pyautogui, time, sys
 from constants import center_region
 from constants import recipe_region
 
-from constants import MAX_ORDERS
-
-from constants import clock
-from constants import food
-from constants import foodOrder
-
-pyautogui.PAUSE = 0.09
+pyautogui.PAUSE = 0.075
 pyautogui.FAILSAFE = True
 
 
 def salad(num):
 	saladimg = None
 	while True:
-		for saladType in range(12):
-			#print(saladType)
+		for saladType in range(25):
+			if saladType == 24:
+				break
 			saladimg = pyautogui.locateOnScreen('saladimg' + str(saladType) + '.png', region=recipe_region, grayscale=True)
 			if saladimg:
 				break
-			if saladType == 17:
-				print('No salad type found')
-				return
+		
 		
 		if saladType == 0:
 			print('House Salad')
@@ -103,6 +96,99 @@ def salad(num):
 			print('Salad Verde')
 			pyautogui.press('r')
 			pyautogui.press('g')
+			break
+
+		elif saladType == 12:
+			print('The Thousand Salad')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('g')
+			break
+
+		elif saladType == 13:
+			print('The Thousand Peppers')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('o')
+			break
+
+		elif saladType == 14:
+			print('Thousand House')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			break
+
+		elif saladType == 15:
+			print('Thousand Tomatoes')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('m')
+			break
+
+		elif saladType == 16:
+			print('Three Thousand')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			pyautogui.press('o')
+			pyautogui.press('g')
+			break
+
+		elif saladType == 17:
+			print('A Thousand Flavors')
+			pyautogui.press('t')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			pyautogui.press('o')
+			pyautogui.press('m')
+			pyautogui.press('g')
+			break
+
+		elif saladType == 18:
+			print('A Thousand Flavors')
+			pyautogui.press('v')
+			pyautogui.press('c')
+			pyautogui.press('o')
+			break
+
+		elif saladType == 19:
+			print('The Oil Bleu')
+			pyautogui.press('v')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			pyautogui.press('o')
+			pyautogui.press('m')
+			pyautogui.press('g')
+			break
+
+		elif saladType == 20:
+			print('Vinaigrette House')
+			pyautogui.press('v')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			break
+
+		elif saladType == 21:
+			print('The Oily Greens')
+			pyautogui.press('v')
+			pyautogui.press('m')
+			pyautogui.press('g')
+			break
+
+		elif saladType == 22:
+			print('Cheesy Vinaigrette')
+			pyautogui.press('v')
+			pyautogui.press('c')
+			break
+
+		elif saladType == 23:
+			print('Vinaigrette Classic')
+			pyautogui.press('v')
+			pyautogui.press('c')
+			pyautogui.press('b')
+			pyautogui.press('o')
+			pyautogui.press('m')
 			break
 
 		else:

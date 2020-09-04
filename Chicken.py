@@ -9,13 +9,12 @@ from constants import clock
 from constants import food
 from constants import foodOrder
 
-pyautogui.PAUSE = 0.09
+pyautogui.PAUSE = 0.075
 pyautogui.FAILSAFE = True
 
 
 def chicken(num):
-	global food
-	global clock
+	print('Chickeny.')
 	
 	food[num-1] = 'chicken'
 

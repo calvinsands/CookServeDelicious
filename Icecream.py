@@ -9,21 +9,19 @@ from constants import clock
 from constants import food
 from constants import foodOrder
 
-pyautogui.PAUSE = 0.09
+pyautogui.PAUSE = 0.075
 pyautogui.FAILSAFE = True
 
 
 def icecream(num):
 	icecreamimg = None
 	while True:
-		for icecreamType in range(6):
-			#print(icecreamType)
+		for icecreamType in range(7):
+			if icecreamType == 6:
+				break
 			icecreamimg = pyautogui.locateOnScreen('icecreamimg' + str(icecreamType) + '.png', region=recipe_region, grayscale=True)
 			if icecreamimg:
 				break
-			if icecreamType == 5:
-				print('No ice cream type found')
-				return
 		
 		if icecreamType == 0:
 			print('Plain Vanilla')
